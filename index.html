@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="everything">
+        <div id="info">
+            <h1>Tony's Calculator</h1>
+            <p>Coded and styled by <a href="https://github.com/28r" target="_blank" rel="noopener noreferrer">Antônio Moraes</a> &copy; 2022</p>
+            <p>% not implemented yet!</p>
+        </div>
+        <div id="calculator">
+            <div id="screen">0</div>
+            <div id="grid">
+                <button class="hor1" id="clear" onclick="clearBox()">AC</button>
+                <button class="hor1" id="plusminus" onclick="invert()">+/-</button>
+                <button class="hor1" id="percent">%</button>
+                <button class="hor2" id="split" onclick="operate(`/`)">/</button>
+                <button class="hor3" onclick="concatenate(7)">7</button>
+                <button class="hor3" onclick="concatenate(8)">8</button>
+                <button class="hor3" onclick="concatenate(9)">9</button>
+                <button class="hor2" id="clear" onclick="operate(`*`)">*</button>
+                <button class="hor3" onclick="concatenate(4)">4</button>
+                <button class="hor3" onclick="concatenate(5)">5</button>
+                <button class="hor3" onclick="concatenate(6)">6</button>
+                <button class="hor2" id="minus" onclick="operate(`-`)">-</button>
+                <button class="hor3" onclick="concatenate(1)">1</button>
+                <button class="hor3" onclick="concatenate(2)">2</button>
+                <button class="hor3" onclick="concatenate(3)">3</button>
+                <button class="hor2" id="plus" onclick="operate(`+`)">+</button>
+                <button class="hor3" id="zero" onclick="concatenate(0)">0</button>
+                <button class="hor3" id="dot" onclick="addfloat()">.</button>
+                <button id="enter" onclick="enter()">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
