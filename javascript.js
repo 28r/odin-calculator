@@ -36,6 +36,8 @@ function operate(op) {
                 case '*':
                     disp = mem*disp;
                     populate(roundForPrinting(disp));
+                    operatorsBlocked = true;
+                    emptyNextButtonPress = true;
                     break;
                 case '/':
                     if (disp == 0) {
@@ -45,14 +47,20 @@ function operate(op) {
                     }
                     disp = mem/disp;
                     populate(roundForPrinting(disp));
+                    operatorsBlocked = true;
+                    emptyNextButtonPress = true;
                     break;
                 case '+':
                     disp = mem+disp;
                     populate(roundForPrinting(disp));
+                    operatorsBlocked = true;
+                    emptyNextButtonPress = true;
                     break;
                 case '-':
                     disp = mem-disp;
                     populate(roundForPrinting(disp));
+                    operatorsBlocked = true;
+                    emptyNextButtonPress = true;
                     break;
                 default:
                     throw new Error("Something went badly wrong!");
