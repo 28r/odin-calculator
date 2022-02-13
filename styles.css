@@ -16,6 +16,7 @@ body {
     color: white;
     line-height: 1.3;
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 5px;
 }
 
 #grid {
@@ -40,6 +41,7 @@ body {
 @media only screen and (max-width: 450px) {
     #screen {
         width: auto;
+        font-size: 48px;
     }
     #calculator {
         width: 80vw;

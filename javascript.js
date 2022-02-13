@@ -81,7 +81,6 @@ function concatenate(digit) {
         return 1;
     }
     else if (emptyNextButtonPress == true) {
-        screen.innerHTML = "";
         disp = digit;
         populate(disp);
         emptyNextButtonPress = false;
@@ -132,4 +131,9 @@ function roundForPrinting(num) {
     else {
         return helper.substring(0, 9);
     }
+}
+
+function dispToPercent() {
+    disp = disp * 0.01;
+    populate(roundForPrinting(disp));
 }

@@ -13,14 +13,14 @@
         <div id="info">
             <h1>Tony's Calculator</h1>
             <p>Coded and styled by <a href="https://github.com/28r" target="_blank" rel="noopener noreferrer">Antônio Moraes</a> &copy; 2022</p>
-            <p>% not implemented yet!</p>
+            <br>
         </div>
         <div id="calculator">
             <div id="screen">0</div>
             <div id="grid">
                 <button class="hor1" id="clear" onclick="clearBox()">AC</button>
                 <button class="hor1" id="plusminus" onclick="invert()">+/-</button>
-                <button class="hor1" id="percent">%</button>
+                <button class="hor1" id="percent" onclick="dispToPercent()">%</button>
                 <button class="hor2" id="split" onclick="operate(`/`)">/</button>
                 <button class="hor3" onclick="concatenate(7)">7</button>
                 <button class="hor3" onclick="concatenate(8)">8</button>
