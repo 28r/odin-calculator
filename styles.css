@@ -63,7 +63,7 @@ body {
    outline: none;
 }
 
-#zero {
+.span2 {
     grid-column: span 2;
 }
 

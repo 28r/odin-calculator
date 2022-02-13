@@ -137,3 +137,41 @@ function dispToPercent() {
     disp = disp * 0.01;
     populate(roundForPrinting(disp));
 }
+
+// Support for keyboard controls
+window.addEventListener('keydown', function(e){
+    for (let i = 0; i < 10; i++) {
+        if (e.key === `${i}`){
+            let target = this.document.getElementById(`${i}`);
+            target.click();
+        }
+    }
+    if (e.key === '.' || e.key === ',') {
+        let target = this.document.getElementById('dot');
+        target.click();
+    }
+    if (e.key === 'c' || e.key === 'C') {
+        let target = this.document.getElementById('clear');
+        target.click();
+    }
+    if (e.key === '*') {
+        let target = this.document.getElementById('multiply');
+        target.click();
+    }
+    if (e.key === '+') {
+        let target = this.document.getElementById('plus');
+        target.click();
+    }
+    if (e.key === '-') {
+        let target = this.document.getElementById('minus');
+        target.click();
+    }
+    if (e.key === '/') {
+        let target = this.document.getElementById('split');
+        target.click();
+    }
+    if (e.key === 'Enter') {
+        let target = this.document.getElementById('enter');
+        target.click();
+    }
+});
