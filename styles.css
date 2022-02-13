@@ -53,6 +53,7 @@ body {
     border-radius: 5px;
     overflow: hidden;
     perspective: 1px;
+    padding: 25px 25px;
 }
 
 #grid button:active {
