@@ -80,7 +80,12 @@ function populate(value) {
 
 function concatenate(digit) {
     operatorsBlocked = false;
-    if ((disp == 0 && emptyNextButtonPress == null) || (disp == 0 && emptyNextButtonPress == false)) {
+    if (disp === '0.') {
+        disp = ("" + disp + digit);
+        populate(disp);
+        return;
+    }
+    else if ((disp == 0 && emptyNextButtonPress == null) || (disp == 0 && emptyNextButtonPress == false)) {
         disp = digit;
         populate(disp);
         return;
@@ -108,11 +113,16 @@ function invert() {
 }
 
 function addfloat() {
-    if (disp.toString().includes(`.`) == true) {
+    if (disp == 0) {
+        disp = '0.';
+        populate(disp);
+    }
+    else if (disp.toString().includes(`.`) == true) {
         return 1;
     }
     else {
         disp = ("" + disp + '.');
+        console.log(disp);
         populate(disp);
         return;
     }
