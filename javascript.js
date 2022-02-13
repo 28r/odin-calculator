@@ -4,13 +4,18 @@ let storedop = null;
 let screen = document.getElementById("screen");
 let emptyNextButtonPress = null;
 let stickLol = false;
+let operatorsBlocked = false;
 
 function operate(op) {
+    if (operatorsBlocked == true) {
+        return 1;
+    }
     if (mem == null) {
         mem = disp;
         disp = 0;
         storedop = op;
         screen.innerHTML = "0";
+        operatorsBlocked = true;
         return;
     }
     else {
@@ -21,6 +26,7 @@ function operate(op) {
             mem = disp;
             disp = 0;
             emptyNextButtonPress = true;
+            operatorsBlocked = true;
             return;
         }
         else {
@@ -62,6 +68,7 @@ function clearBox() {
     storedop = null;
     screen.innerHTML = "0";
     emptyNextButtonPress = null;
+    operatorsBlocked = false;
     return;
 }
 
@@ -72,6 +79,7 @@ function populate(value) {
 }
 
 function concatenate(digit) {
+    operatorsBlocked = false;
     if ((disp == 0 && emptyNextButtonPress == null) || (disp == 0 && emptyNextButtonPress == false)) {
         disp = digit;
         populate(disp);
@@ -111,6 +119,7 @@ function addfloat() {
 }
 
 function enter() {
+    operatorsBlocked = false;
     operate(storedop);
     if (stickLol == true) {
         stickLol = false;
