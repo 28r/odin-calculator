@@ -29,7 +29,7 @@ function operate(op) {
             switch (op) {
                 case '*':
                     disp = mem*disp;
-                    populate(disp);
+                    populate(roundForPrinting(disp));
                     break;
                 case '/':
                     if (disp == 0) {
@@ -38,15 +38,15 @@ function operate(op) {
                         return;
                     }
                     disp = mem/disp;
-                    populate(disp);
+                    populate(roundForPrinting(disp));
                     break;
                 case '+':
                     disp = mem+disp;
-                    populate(disp);
+                    populate(roundForPrinting(disp));
                     break;
                 case '-':
                     disp = mem-disp;
-                    populate(disp);
+                    populate(roundForPrinting(disp));
                     break;
                 default:
                     throw new Error("Something went badly wrong!");
@@ -120,6 +120,16 @@ function enter() {
     helper = mem;
     clearBox();
     disp = helper;
-    screen.innerHTML = `${disp}`;
+    screen.innerHTML = `${roundForPrinting(disp)}`;
     return;
+}
+
+function roundForPrinting(num) {
+    helper = parseFloat(Math.round(num + 'e' + '15') + 'e-' + '15').toString();
+    if (helper.length < 10) {
+        return helper;
+    }
+    else {
+        return helper.substring(0, 9);
+    }
 }
